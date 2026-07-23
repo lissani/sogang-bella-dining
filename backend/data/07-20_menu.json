@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "title": "주간메뉴표",
+    "period": "2026.07.20 - 2026.07.26",
+    "institution": "서강대학교",
+    "provider": "아워홈 서강대기숙사마포점",
+    "contacts": {
+      "phone": "010-6859-0914",
+      "email": "kim.minju1@ourhome.co.kr"
+    }
+  },
+  "weekly_menu": [
+    {
+      "date": "2026-07-20",
+      "day_of_week": "월요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "스팸구이&케찹",
+            "items": [
+              "스팸구이",
+              "케찹"
+            ],
+            "calories": "725 Kcal"
+          },
+          "bakery": {
+            "main": "후르츠/우유",
+            "items": [
+              "후르츠",
+              "우유"
+            ],
+            "calories": ""
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "12:00",
+          "menu": "참치야채볶음밥"
+        },
+        "dinner": {
+          "korean": {
+            "main": "장터해장국",
+            "items": [
+              "장터해장국"
+            ],
+            "calories": ""
+          },
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "day_of_week": "화요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "새우야채죽",
+            "items": [
+              "새우야채죽"
+            ],
+            "calories": "744 Kcal"
+          },
+          "bakery": {
+            "main": "우유",
+            "items": [
+              "우유"
+            ],
+            "calories": ""
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "12:00",
+          "menu": "충무식오징어무침"
+        },
+        "dinner": {
+          "korean": {
+            "main": "비빔야채*당면만두",
+            "items": [
+              "비빔야채",
+              "당면만두"
+            ],
+            "calories": ""
+          },
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-22",
+      "day_of_week": "수요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "미트볼떡조림",
+            "items": [
+              "미트볼떡조림"
+            ],
+            "calories": "756 Kcal"
+          },
+          "bakery": {
+            "main": "후르츠/우유",
+            "items": [
+              "후르츠",
+              "우유"
+            ],
+            "calories": ""
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "12:00",
+          "menu": "가자미구이"
+        },
+        "dinner": {
+          "korean": {
+            "main": "콩나물국",
+            "items": [
+              "콩나물국"
+            ],
+            "calories": ""
+          },
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-23",
+      "day_of_week": "목요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "차돌된장찌개",
+            "items": [
+              "차돌된장찌개"
+            ],
+            "calories": "769 Kcal"
+          },
+          "bakery": {
+            "main": "후르츠/우유",
+            "items": [
+              "후르츠",
+              "우유"
+            ],
+            "calories": ""
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "12:00",
+          "menu": "제육오징어덮밥"
+        },
+        "dinner": {
+          "korean": {
+            "main": "오징어무국",
+            "items": [
+              "오징어무국"
+            ],
+            "calories": ""
+          },
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "day_of_week": "금요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "너비아니구이&파채",
+            "items": [
+              "너비아니구이",
+              "파채"
+            ],
+            "calories": "693 Kcal"
+          },
+          "bakery": {
+            "main": "후르츠/우유",
+            "items": [
+              "후르츠",
+              "우유"
+            ],
+            "calories": ""
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "12:00",
+          "menu": "우거지순대국"
+        },
+        "dinner": {
+          "korean": {
+            "main": "오그락지",
+            "items": [
+              "오그락지"
+            ],
+            "calories": ""
+          },
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-25",
+      "day_of_week": "토요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "멘치카츠&일식소스",
+            "items": [
+              "멘치카츠",
+              "일식소스"
+            ],
+            "calories": "685 Kcal"
+          },
+          "bakery": {
+            "main": "후르츠/우유",
+            "items": [
+              "후르츠",
+              "우유"
+            ],
+            "calories": ""
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "12:00",
+          "menu": "카레라이스"
+        },
+        "dinner": {
+          "korean": {
+            "main": "미역국",
+            "items": [
+              "미역국"
+            ],
+            "calories": ""
+          },
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-26",
+      "day_of_week": "일요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "제육고추장볶음",
+            "items": [
+              "제육고추장볶음"
+            ],
+            "calories": "682 Kcal"
+          },
+          "bakery": {
+            "main": "후르츠/우유",
+            "items": [
+              "후르츠",
+              "우유"
+            ],
+            "calories": ""
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "12:00",
+          "menu": "미소시루"
+        },
+        "dinner": {
+          "korean": {
+            "main": "계란찜",
+            "items": [
+              "계란찜"
+            ],
+            "calories": ""
+          },
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    }
+  ]
+}

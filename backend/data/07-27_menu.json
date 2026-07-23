@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "title": "서강대학교 주간메뉴표",
+    "period": "2026.07.27 - 2026.08.02",
+    "institution": "서강대학교",
+    "provider": "아워를 서강대기숙사마포점",
+    "contacts": {
+      "phone": "010-6859-0914",
+      "email": "kim.minju1@ourhome.co.kr"
+    }
+  },
+  "weekly_menu": [
+    {
+      "date": "2026-07-27",
+      "day_of_week": "월요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "참치두부김치찌개",
+            "items": [
+              "쌀밥",
+              "깍두기",
+              "나박물김치"
+            ],
+            "calories": "766 Kcal"
+          },
+          "bakery": {
+            "main": "바나나/우유",
+            "items": [],
+            "calories": "766 Kcal"
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "돈까스덮밥"
+        },
+        "dinner": {
+          "korean": {
+            "main": "시래기국",
+            "items": [
+              "쌀밥",
+              "계란찜",
+              "오이지무침",
+              "연두부&양념장",
+              "토마토브라타샐러드",
+              "데친두부",
+              "코울슬로",
+              "고추지무침",
+              "깍두기",
+              "배추김치"
+            ],
+            "calories": "768 Kcal"
+          },
+          "info": "행복을 주는 석식",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-28",
+      "day_of_week": "화요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "흑미건강닭죽",
+            "items": [
+              "잡곡밥",
+              "미역초무침",
+              "콩조림",
+              "배추김치"
+            ],
+            "calories": "715 Kcal"
+          },
+          "bakery": {
+            "main": "우유",
+            "items": [],
+            "calories": "715 Kcal"
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "제육버섯불고기"
+        },
+        "dinner": {
+          "korean": {
+            "main": "아욱된장국",
+            "items": [
+              "쌀밥",
+              "핫바케찹",
+              "깍두기",
+              "요거트젤리"
+            ],
+            "calories": "729 Kcal"
+          },
+          "info": "행복을 주는 석식",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-29",
+      "day_of_week": "수요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "고추장불고기",
+            "items": [
+              "잡곡밥",
+              "배추김치"
+            ],
+            "calories": "719 Kcal"
+          },
+          "bakery": {
+            "main": "오렌지/우유",
+            "items": [],
+            "calories": "719 Kcal"
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "자반고등어구이"
+        },
+        "dinner": {
+          "korean": {
+            "main": "핫바케찹",
+            "items": [
+              "쌀밥",
+              "감자채볶음",
+              "깍두기"
+            ],
+            "calories": "733 Kcal"
+          },
+          "info": "행복을 주는 석식",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-30",
+      "day_of_week": "목요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "옛날소세지전&케찹",
+            "items": [
+              "잡곡밥",
+              "미소시루",
+              "깍두기"
+            ],
+            "calories": "752 Kcal"
+          },
+          "bakery": {
+            "main": "방울토마토/우유",
+            "items": [],
+            "calories": "752 Kcal"
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "소불고기볶음밥"
+        },
+        "dinner": {
+          "korean": {
+            "main": "시래기국",
+            "items": [
+              "쌀밥",
+              "깍두기",
+              "배추김치"
+            ],
+            "calories": "725 Kcal"
+          },
+          "info": "행복을 주는 석식",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "day_of_week": "금요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "가자미구이",
+            "items": [
+              "잡곡밥",
+              "배추김치"
+            ],
+            "calories": "758 Kcal"
+          },
+          "bakery": {
+            "main": "패션후르츠/우유",
+            "items": [],
+            "calories": "758 Kcal"
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "제육김치볶음"
+        },
+        "dinner": {
+          "korean": {
+            "main": "얼갈이된장국",
+            "items": [
+              "쌀밥",
+              "깍두기",
+              "요거트젤리"
+            ],
+            "calories": "722 Kcal"
+          },
+          "info": "행복을 주는 석식",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "day_of_week": "토요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "유부주머니어묵탕",
+            "items": [
+              "잡곡밥",
+              "배추김치"
+            ],
+            "calories": "809 Kcal"
+          },
+          "bakery": {
+            "main": "씨리얼 2종/우유",
+            "items": [],
+            "calories": "809 Kcal"
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "고기듬뿍마파두부덮밥"
+        },
+        "dinner": {
+          "korean": {
+            "main": "맑은우동국물",
+            "items": [
+              "쌀밥",
+              "깍두기",
+              "요거트젤리"
+            ],
+            "calories": "716 Kcal"
+          },
+          "info": "행복을 주는 석식",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "day_of_week": "일요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "소고기두부탕국",
+            "items": [
+              "잡곡밥",
+              "배추김치"
+            ],
+            "calories": "693 Kcal"
+          },
+          "bakery": {
+            "main": "요거트",
+            "items": [],
+            "calories": "693 Kcal"
+          },
+          "common": "정성이 가득한 조식"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "고기듬뿍마파두부덮밥"
+        },
+        "dinner": {
+          "korean": {
+            "main": "생선까스&타르타르",
+            "items": [
+              "쌀밥",
+              "깍두기",
+              "요거트젤리"
+            ],
+            "calories": "685 Kcal"
+          },
+          "info": "행복을 주는 석식",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    }
+  ]
+}
