@@ -29,3 +29,6 @@ frontend/android/
 # OS
 .DS_Store
 Thumbs.db
+
+# ect
+guide_docs/
