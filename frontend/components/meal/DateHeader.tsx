@@ -29,7 +29,7 @@ export function DateHeader({
 
   return (
     <View style={[styles.container, { backgroundColor: theme.colors.surface }]}>
-      <Text variant="headlineSmall" style={styles.title}>
+      <Text variant="titleLarge" style={[styles.appName, { color: theme.colors.primary }]}>
         오늘 벨밥
       </Text>
 
@@ -40,6 +40,7 @@ export function DateHeader({
           disabled={isFirstDay}
           onPress={onPrevious}
           accessibilityLabel="이전 날짜"
+          style={isFirstDay && styles.disabledButton}
         />
         <Text variant="titleMedium" style={styles.dateText}>
           {formatDisplayDate(date, dayOfWeek)}
@@ -50,6 +51,7 @@ export function DateHeader({
           disabled={isLastDay}
           onPress={onNext}
           accessibilityLabel="다음 날짜"
+          style={isLastDay && styles.disabledButton}
         />
       </View>
     </View>
@@ -58,21 +60,26 @@ export function DateHeader({
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 8,
+    paddingTop: 16,
     paddingBottom: 4,
     paddingHorizontal: 16,
   },
-  title: {
+  appName: {
+    textAlign: 'center',
     fontFamily: 'Pretendard-Bold',
   },
   dateRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 4,
+    marginTop: 2,
   },
   dateText: {
     minWidth: 160,
     textAlign: 'center',
+    fontFamily: 'Pretendard-Bold',
+  },
+  disabledButton: {
+    opacity: 0.3,
   },
 });

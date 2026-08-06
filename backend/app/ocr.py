@@ -1,5 +1,6 @@
 import os
 import json
+import base64
 from menu_schema import json_schema
 
 # 두 라이브러리 모두 os.environ에 등록된 api key를 찾아 쓰므로 보안상 안전
@@ -87,27 +88,93 @@ def parse_text_to_json(ocr_text):
     result_json = json.loads(response.choices[0].message.content)
     return result_json
 
+# 식단표 파싱 실험실
+# [1] ocr 없이 llm에 직접 이미지를 주고 파싱
+def encode_image_to_base64(image_path: str) -> str:
+    """
+    로컬 이미지 파일 경로를 받아 Base64 인코딩 문자열로 변환합니다.
+    """
+    if not os.path.exists(image_path):
+        raise FileNotFoundError(f"이미지 파일을 찾을 수 없습니다: {image_path}")
+        
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+    
+def parse_only_with_multimodal(image_path):
+
+    # ① OpenAI 클라이언트 객체를 생성합니다.
+    load_dotenv()
+
+    # OPENAI_API_KEY 환경변수 확인
+    if not os.getenv("OPENAI_API_KEY"):
+        raise ValueError("OPENAI_API_KEY 환경변수가 설정되지 않았습니다.")
+    
+    client = OpenAI()
+
+    # 1. 이미지를 Base64 인코딩
+    base64_image = encode_image_to_base64(image_path)
+    
+    # 확장자에 따른 mime_type 처리 (png, jpg, jpeg 등)
+    ext = os.path.splitext(image_path)[1].lower()
+    mime_type = "image/png" if ext == ".png" else "image/jpeg"
+
+    # 2. Vision 모델용 프롬프트 작성
+    prompt = (
+        "너는 주간 식단표 이미지 파싱 전문가야. "
+        "첨부된 식단표 이미지를 직접 시각적으로 분석해서, "
+        "격자 형태의 요일별, 끼니별(조식, 컵밥, 석식 등) 메뉴 정보를 정확히 읽고 "
+        "제공된 JSON 스키마 규격에 맞추어 데이터를 추출해 줘."
+    )
+
+    # ③ GPT API를 호출합니다.
+    response = client.chat.completions.create(
+        model="gpt-4o-mini", # 가성비가 가장 좋고 속도가 빠른 모델 선택
+        messages=[
+            {
+                "role": "system", 
+                "content": "이미지에서 읽은 식단 정보를 제공된 JSON 스키마 구조에 완벽히 맞춰 정밀하게 변환하세요."
+            },
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            # base64 데이터 스트림으로 전달
+                            "url": f"data:{mime_type};base64,{base64_image}",
+                            "detail": "high" # 식단표 글자가 작고 빽빽하므로 high 권장
+                        }
+                    }
+                ]
+            }
+        ],
+        # 🔥 이 코드가 치트키입니다. 위에서 정의한 스키마 구조를 모델에 주입하여 JSON 출력을 강제합니다.
+        response_format={"type": "json_schema", "json_schema": json_schema},
+        temperature=0.1 # 값이 낮을수록 모델이 소설을 쓰지 않고 팩트에만 기반해 똑같이 출력합니다.
+    )
+
+    # ④ GPT가 응답한 내용(문자열 형태의 JSON)을 파이썬의 딕셔너리(Dict) 객체로 변환하여 리턴합니다.
+    result_json = json.loads(response.choices[0].message.content)
+    return result_json
+
 # hardcoding_url = "downloaded_menus/menu_image.jpg"
 # full_text = ocr_with_google_vision(hardcoding_url)
 # print(full_text)
 
-# if __name__ == "__main__":
-#     IMAGE_PATH = "downloaded_menus/menu_image.jpg"
+if __name__ == "__main__":
+    IMAGE_PATH = "../downloaded_menus/menu_image.jpg"
 
-#     try:
-#         print("1단계: google cloud vision ocr")
-#         raw_text = ocr_with_google_vision(IMAGE_PATH)
-#         print("ocr 완료. 추출 텍스트 크기:", len(raw_text))
+    try:
 
-#         print("2단계: llm 기반 json 구조 생성")
-#         final_menu_json = parse_text_to_json(raw_text)
-#         print("json 파싱 완료")
+        final_menu_json = parse_only_with_multimodal(IMAGE_PATH)
+        print("json 파싱 완료")
 
-#         # 3. 파싱이 완료된 파이썬 딕셔너리 데이터를 파일로 깔끔하게 저장하기
-#         with open("parsed_menu.json", "w", encoding="utf-8") as f:
-#             # ensure_ascii=False를 줘야 한글이 \u003c 처럼 깨지지 않고 이쁘게 저장됩니다.
-#             json.dump(final_menu_json, f, ensure_ascii=False, indent=2)
-#         print("결과가 'parsed_menu.json' 파일로 저장되었습니다.")
+        # 3. 파싱이 완료된 파이썬 딕셔너리 데이터를 파일로 깔끔하게 저장하기
+        with open("parsed_menu.json", "w", encoding="utf-8") as f:
+            # ensure_ascii=False를 줘야 한글이 \u003c 처럼 깨지지 않고 이쁘게 저장됩니다.
+            json.dump(final_menu_json, f, ensure_ascii=False, indent=2)
+        print("결과가 'parsed_menu.json' 파일로 저장되었습니다.")
 
-#     except Exception as e:
-#         print(f"오류 발생: {e}")
+    except Exception as e:
+        print(f"오류 발생: {e}")

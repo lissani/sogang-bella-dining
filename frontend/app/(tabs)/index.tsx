@@ -2,7 +2,9 @@
 // 화면의 레이아웃 순서를 알 수 있도록
 
 import { ScrollView, StyleSheet, View } from 'react-native';
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { ActivityIndicator, useTheme } from 'react-native-paper';
+import { runOnJS } from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { BreakfastCard } from '@/components/meal/BreakfastCard';
@@ -27,10 +29,22 @@ export default function MealScreen() {
   if (!currentDayMenu) { // 로딩 상태 가드
     return (
       <SafeAreaView style={[styles.loading, { backgroundColor: theme.colors.background }]}>
-        <ActivityIndicator animating size="large" /> // 로딩 애니메이션
+        <ActivityIndicator animating size="large" />
       </SafeAreaView>
     );
   }
+
+  // 좌우 스와이프로 날짜 이동 - 세로 스크롤과 겹치지 않도록 수평 이동에만 반응
+  const swipeGesture = Gesture.Pan()
+    .activeOffsetX([-20, 20])
+    .failOffsetY([-15, 15])
+    .onEnd(event => {
+      if (event.translationX < -50 && !isLastDay) {
+        runOnJS(goToNextDay)();
+      } else if (event.translationX > 50 && !isFirstDay) {
+        runOnJS(goToPreviousDay)();
+      }
+    });
 
   return (
     // 안전 여백 확보
@@ -44,14 +58,16 @@ export default function MealScreen() {
         isLastDay={isLastDay}
       />
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        <BreakfastCard breakfast={currentDayMenu.meals.breakfast} />
-        <LunchCard lunch={currentDayMenu.meals.lunch_cupbap} />
-        <DinnerCard dinner={currentDayMenu.meals.dinner} />
+      <GestureDetector gesture={swipeGesture}>
+        <ScrollView contentContainerStyle={styles.scrollContent}>
+          <BreakfastCard breakfast={currentDayMenu.meals.breakfast} />
+          <LunchCard lunch={currentDayMenu.meals.lunch_cupbap} />
+          <DinnerCard dinner={currentDayMenu.meals.dinner} />
 
-        <View style={styles.footerSpacer} />
-        <ContactFooter meta={meta} />
-      </ScrollView>
+          <View style={styles.footerSpacer} />
+          <ContactFooter meta={meta} />
+        </ScrollView>
+      </GestureDetector>
     </SafeAreaView>
   );
 }

@@ -5,8 +5,11 @@
 
 import { useState, useEffect } from 'react';
 import { WeeklyMenuResponse, DailyMenu } from '../types/menu';
-// 임시 mock 데이터 import (또는 fetch API 사용)
-import mockData from '../assets/data/mock_menu.json';
+
+// // 임시 mock 데이터 import (또는 fetch API 사용)
+// import mockData from '../assets/data/mock_menu.json';
+
+
 
 export const useWeeklyMenu = () => {
   // 상태 선언
@@ -15,13 +18,26 @@ export const useWeeklyMenu = () => {
 
   useEffect(() => {
     // 실서비스 시에는 여기서 backend API 호출
-    const data = mockData as WeeklyMenuResponse;
-    setMenuData(data);
+    // const data = mockData as WeeklyMenuResponse;
+    // setMenuData(data);
 
-    // 기본 선택값: 오늘 날짜 (데이터에 없다면 데이터의 첫 번째 날짜)
-    const todayStr = new Date().toISOString().split('T')[0];
-    const hasToday = data.weekly_menu.some(m => m.date === todayStr);
-    setSelectedDate(hasToday ? todayStr : data.weekly_menu[0]?.date ?? '');
+    // localhost 환경에서 API 호출
+    fetch(`${process.env.EXPO_PUBLIC_LOCAL_API_URL}/api/menu/weekly`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('API 응답 오류: ' + response.status);
+        }
+        return response.json();
+      })
+      .then((data: WeeklyMenuResponse) => {
+        setMenuData(data);
+        const todayStr = new Date().toISOString().split('T')[0];
+        const hasToday = data.weekly_menu.some(m => m.date === todayStr);
+        setSelectedDate(hasToday ? todayStr : data.weekly_menu[data.weekly_menu.length - 1]?.date ?? '');
+      })
+      .catch(error => {
+        console.error('API 호출 실패:', error);
+      });
   }, []); // 컴포넌트가 처음 마운트될 때 한 번만 실행
 
   const weeklyList = menuData?.weekly_menu ?? [];

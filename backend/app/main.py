@@ -53,10 +53,10 @@ def _load_all_days() -> list[dict]:
     return all_days
 
 
-# @app.get("/api/menu/weekly")
-# def get_weekly_menu():
-#     """저장된 모든 주간 메뉴 데이터를 반환합니다."""
-#     return {"weekly_menu": _load_all_days()}
+@app.get("/api/menu/weekly")
+def get_weekly_menu():
+    """저장된 모든 주간 메뉴 데이터를 반환합니다."""
+    return {"weekly_menu": _load_all_days()}
 
 
 @app.get("/api/menu/daily")

@@ -12,9 +12,18 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: theme.colors.primary,
-        tabBarInactiveTintColor: theme.colors.onSurfaceVariant,
-        tabBarStyle: { backgroundColor: theme.colors.surface },
+        tabBarActiveTintColor: theme.colors.onSurface,
+        tabBarInactiveTintColor: theme.colors.secondary,
+        tabBarStyle: {
+          backgroundColor: theme.colors.surface,
+          height: 75,        // 원하는 높이로 조절
+          paddingBottom: 10,
+          paddingTop: 8,
+         },
+        tabBarLabelStyle: {
+          fontSize: 13,
+          fontFamily: 'Pretendard-Medium',
+        },
         headerShown: false,
         tabBarButton: HapticTab,
       }}>

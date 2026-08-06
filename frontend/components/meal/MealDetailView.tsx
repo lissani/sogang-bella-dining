@@ -1,60 +1,73 @@
 import { StyleSheet, View } from 'react-native';
-import { Chip, Text, useTheme } from 'react-native-paper';
+import { Text, useTheme } from 'react-native-paper';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import { MealDetail } from '@/types/menu';
 
 type MealDetailViewProps = {
   detail: MealDetail;
+  common?: string | null;
 };
 
-export function MealDetailView({ detail }: MealDetailViewProps) {
+export function MealDetailView({ detail, common }: MealDetailViewProps) {
   const theme = useTheme();
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerRow}>
-        <Text variant="titleMedium" style={styles.main}>
+      <View style={styles.itemRow}>
+        <MaterialCommunityIcons name="star" size={11} color={theme.colors.primary} />
+        <Text variant="bodyLarge" style={[styles.main, { color: theme.colors.onSurface }]}>
           {detail.main}
-        </Text>
-        <Text variant="labelLarge" style={{ color: theme.colors.primary }}>
-          {detail.calories}
         </Text>
       </View>
 
-      <View style={styles.itemsRow}>
-        {detail.items.map(item => (
-          <Chip key={item} compact style={styles.chip} textStyle={styles.chipText}>
+      {detail.items.map(item => (
+        <View key={item} style={styles.itemRow}>
+          <View style={[styles.bullet, { backgroundColor: theme.colors.onSurfaceVariant }]} />
+          <Text variant="bodyLarge" style={{ color: theme.colors.onSurface }}>
             {item}
-          </Chip>
-        ))}
-      </View>
+          </Text>
+        </View>
+      ))}
+
+      {common && (
+        <View style={styles.commonRow}>
+          <View style={[styles.bullet, styles.commonBullet, { borderColor: theme.colors.onSurfaceVariant }]} />
+          <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, flexShrink: 1 }}>
+            {common}
+          </Text>
+        </View>
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    gap: 10,
-  },
-  headerRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    gap: 8,
+    paddingLeft: 12,
   },
   main: {
-    flexShrink: 1,
     fontFamily: 'Pretendard-SemiBold',
   },
-  itemsRow: {
+  itemRow: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 6,
+    alignItems: 'center',
+    gap: 8,
   },
-  chip: {
-    height: 32,
+  bullet: {
+    width: 4,
+    height: 4,
+    borderRadius: 2,
   },
-  chipText: {
-    fontSize: 12,
-    lineHeight: 16,
+  commonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginTop: 4,
+  },
+  commonBullet: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
   },
 });

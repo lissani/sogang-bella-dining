@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { Card, Text, useTheme } from 'react-native-paper';
+import { Card, Divider, Text, useTheme } from 'react-native-paper';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import { Dinner } from '@/types/menu';
@@ -17,19 +17,23 @@ export function DinnerCard({ dinner }: DinnerCardProps) {
     <Card mode="elevated" style={styles.card}>
       <Card.Content style={styles.content}>
         <View style={styles.headerRow}>
-          <Text variant="titleLarge">🍚 저녁</Text>
-          <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
+          <Text variant="titleLarge" style={styles.headerLeft}>🍚 저녁</Text>
+          <Text variant="bodyMedium" style={[styles.headerCenter, { color: theme.colors.onSurfaceVariant }]}>
             17:30 - 19:30
+          </Text>
+          <Text variant="labelLarge" style={[styles.headerRight, { color: theme.colors.primary }]}>
+            {isOperating ? dinner.korean!.calories : ''}
           </Text>
         </View>
 
+        <Divider />
+
         {isOperating ? (
           <>
-            <MealDetailView detail={dinner.korean!} />
-            {dinner.common_beverage && (
+            <MealDetailView detail={dinner.korean!} common={dinner.common_beverage} />
+            {dinner.info && (
               <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>
-                {dinner.info ? `${dinner.info} · ` : ''}
-                {dinner.common_beverage}
+                {dinner.info}
               </Text>
             )}
           </>
@@ -56,17 +60,29 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   content: {
-    gap: 10,
+    gap: 12,
   },
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+  },
+  headerLeft: {
+    flex: 1,
+  },
+  headerCenter: {
+    flex: 1,
+    textAlign: 'center',
+  },
+  headerRight: {
+    flex: 1,
+    textAlign: 'right',
   },
   notOperating: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: 8,
-    paddingVertical: 8,
+    minHeight: 85,
+    paddingVertical: 24,
   },
 });
