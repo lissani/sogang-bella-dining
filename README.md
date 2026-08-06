@@ -11,6 +11,14 @@
 
 ---
 
+## 🎨 Screenshot
+
+| 일반 케이스 | 주 1회 점심 컵밥 제공 | 주 1회 석식 미제공 |
+| :---: | :---: | :---: |
+| <img width="250" alt="일반 케이스" src="https://github.com/user-attachments/assets/a81b30ee-01bb-40d0-92c7-19f227d3fb27" /> | <img width="250" alt="주 1회 점심 컵밥 제공" src="https://github.com/user-attachments/assets/15735f6d-8c98-4275-8ace-d02250720158" /> | <img width="250" alt="주 1회 석식 미제공" src="https://github.com/user-attachments/assets/a9c9f4d3-7754-403c-8e18-21cfe5e10768" /> |
+
+---
+
 ## 📌 Key Features
 
 - **완전 자동화된 식단 수집 파이프라인**: 크롤링 → OCR → GPT 파싱까지 사람 개입 없이 주기적으로 실행
@@ -19,13 +27,6 @@
 - **날짜별 조회 API**: 주간 전체 조회(`/api/menu/weekly`)와 특정 날짜 단건 조회(`/api/menu/daily`) 지원
 - **스와이프 기반 날짜 탐색 UI**: 좌우 스와이프로 조식/컵밥(런치)/석식 카드를 날짜별로 전환
 - **라이트/다크 모드 대응**: Notion 스타일의 모노크롬 테마를 라이트·다크 두 버전으로 구현
-
-- **Fully automated pipeline**: crawling → OCR → LLM parsing runs on a schedule with zero manual steps
-- **Duplicate-safe**: tracks the last processed post ID so the same weekly image is never reprocessed
-- **Fail-safe by design**: if crawling, OCR, or parsing fails, the API still serves the last successfully parsed menu instead of breaking
-- **Date-scoped endpoints**: fetch the full week or a single day (`/api/menu/weekly`, `/api/menu/daily`)
-- **Swipe-based navigation**: swipe left/right to move between days across breakfast / lunch (cup-rice) / dinner cards
-- **Light & dark themes**: a Notion-inspired monochrome design system in both modes
 
 ---
 
