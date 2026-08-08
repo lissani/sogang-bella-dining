@@ -50,6 +50,7 @@ def _load_all_days() -> list[dict]:
 
         all_days.extend(data.get("weekly_menu", []))
 
+    all_days.sort(key=lambda day: day.get("date", ""))
     return all_days
 
 

@@ -22,7 +22,7 @@ export const useWeeklyMenu = () => {
     // setMenuData(data);
 
     // localhost 환경에서 API 호출
-    fetch(`${process.env.EXPO_PUBLIC_LOCAL_API_URL}/api/menu/weekly`)
+    fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/menu/weekly`)
       .then(response => {
         if (!response.ok) {
           throw new Error('API 응답 오류: ' + response.status);

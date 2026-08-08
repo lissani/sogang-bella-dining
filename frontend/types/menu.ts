@@ -27,9 +27,9 @@ export interface DailyMenu {
   date: string; // yyyy-mm-dd
   day_of_week: string; // "월요일" 등
   meals: {
-    breakfast: Breakfast;
+    breakfast: Breakfast | null;
     lunch_cupbap: LunchCupbap | null;
-    dinner: Dinner;
+    dinner: Dinner | null;
   };
 }
 

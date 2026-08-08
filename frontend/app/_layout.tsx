@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 // react native paper 기본 아이콘 세트
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { PaperProvider } from 'react-native-paper';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
@@ -34,15 +35,17 @@ export default function RootLayout() {
   // 메인화면 탭 등록 + 스마트폰 상태바 관리
   // papterTheme 테마 주입
   return (
-    <PaperProvider
-      theme={paperTheme}
-      settings={{ icon: (props) => <MaterialCommunityIcons {...props} /> }}>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <PaperProvider
+        theme={paperTheme}
+        settings={{ icon: (props) => <MaterialCommunityIcons {...props} /> }}>
+        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           </Stack>
-        <StatusBar style="auto" />
-      </ThemeProvider>
-    </PaperProvider>
+          <StatusBar style="auto" />
+        </ThemeProvider>
+      </PaperProvider>
+    </GestureHandlerRootView>
   );
 }

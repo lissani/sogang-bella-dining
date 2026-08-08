@@ -6,11 +6,18 @@ import { Dinner } from '@/types/menu';
 import { MealDetailView } from './MealDetailView';
 
 type DinnerCardProps = {
-  dinner: Dinner;
+  dinner: Dinner | null;
 };
 
 export function DinnerCard({ dinner }: DinnerCardProps) {
   const theme = useTheme();
+
+  // 기숙사 미운영 등 비정기 사유로 dinner 객체 자체가 내려오지 않는 날은 카드를 표시하지 않는다.
+  if (!dinner) {
+    return null;
+  }
+
+  // 토요일 정기 미운영처럼 dinner 객체는 있지만 한식 메뉴가 없는 날은 안내 문구를 보여준다.
   const isOperating = dinner.korean !== null;
 
   return (

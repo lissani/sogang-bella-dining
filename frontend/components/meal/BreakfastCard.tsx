@@ -10,7 +10,7 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 }
 
 type BreakfastCardProps = {
-  breakfast: Breakfast;
+  breakfast: Breakfast | null;
 };
 
 export function BreakfastCard({ breakfast }: BreakfastCardProps) {
@@ -22,6 +22,13 @@ export function BreakfastCard({ breakfast }: BreakfastCardProps) {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setSection(value);
   };
+
+  // 기숙사 미운영 등 비정기 사유로 breakfast 자체가 없거나(null),
+  // 객체는 있지만 실제 메뉴 데이터가 비어있는 날은 카드를 표시하지 않는다.
+  const isEmpty = !breakfast || (!breakfast.korean.main && !breakfast.bakery.main);
+  if (isEmpty) {
+    return null;
+  }
 
   return (
     <Card mode="elevated" style={styles.card}>
