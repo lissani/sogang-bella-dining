@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "title": "주간메뉴표",
+    "period": "2026.08.03 ~ 08.09",
+    "institution": "서강대학교 벨라르미노학사",
+    "provider": "아워홈 서강대기숙사마포점",
+    "contacts": {
+      "phone": "010-6859-0914",
+      "email": "kim.minju1@ourhome.co.kr"
+    }
+  },
+  "weekly_menu": [
+    {
+      "date": "2026-08-03",
+      "day_of_week": "월요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "동태매운탕",
+            "items": [
+              "잡곡밥",
+              "부추전",
+              "맛살야채볶음",
+              "건파래볶음",
+              "배추김치",
+              "만다린/우유"
+            ],
+            "calories": "761 Kcal"
+          },
+          "bakery": {
+            "main": "던킨 글레이즈도넛",
+            "items": [
+              "감자샐러드",
+              "만다린",
+              "씨리얼 2종/우유",
+              "요거트"
+            ],
+            "calories": "712 Kcal"
+          },
+          "common": "그린샐러드 & 드레싱 & 셀프계란후라이"
+        },
+        "lunch_cupbap": null,
+        "dinner": {
+          "korean": {
+            "main": "설렁탕&소면사리",
+            "items": [
+              "쌀밥",
+              "미트볼떡조림",
+              "멸치볶음",
+              "고춧잎무침",
+              "깍두기"
+            ],
+            "calories": "762 Kcal"
+          },
+          "info": null,
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-04",
+      "day_of_week": "화요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "사골참치영양죽",
+            "items": [
+              "동치미",
+              "옛날소세지전&케찹",
+              "콩나물무침",
+              "갓절임",
+              "파인애플",
+              "우유"
+            ],
+            "calories": "754 Kcal"
+          },
+          "bakery": {
+            "main": "대파크림치즈베이글",
+            "items": [
+              "집게맛살튀김",
+              "파인애플",
+              "씨리얼 2종/우유",
+              "요거트"
+            ],
+            "calories": "726 Kcal"
+          },
+          "common": "그린샐러드 & 드레싱 & 셀프계란후라이"
+        },
+        "lunch_cupbap": {
+          "time": "11:40",
+          "menu": "치킨마요덮밥"
+        },
+        "dinner": {
+          "korean": {
+            "main": "규동덮밥",
+            "items": [
+              "미소시루",
+              "생선까스&타르타르",
+              "콘샐러드",
+              "배추김치",
+              "애플푸딩"
+            ],
+            "calories": "728 Kcal"
+          },
+          "info": null,
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-05",
+      "day_of_week": "수요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "중국식샐러리돼지고기볶음",
+            "items": [
+              "잡곡밥",
+              "얼갈이된장국",
+              "메추리알조림",
+              "도시락김구이",
+              "배추김치",
+              "후르츠/우유"
+            ],
+            "calories": "722 Kcal"
+          },
+          "bakery": {
+            "main": "스윗갈릭치즈피자",
+            "items": [
+              "해쉬브라운",
+              "후르츠",
+              "씨리얼 2종/우유",
+              "콜라"
+            ],
+            "calories": "758 Kcal"
+          },
+          "common": "그린샐러드 & 드레싱 & 셀프계란후라이"
+        },
+        "lunch_cupbap": null,
+        "dinner": {
+          "korean": {
+            "main": "삼겹살마늘볶음",
+            "items": [
+              "쌀밥",
+              "미역냉국",
+              "청포묵김가루무침",
+              "부추겉절이",
+              "배추김치"
+            ],
+            "calories": "749 Kcal"
+          },
+          "info": null,
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-06",
+      "day_of_week": "목요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "소고기콩나물밥",
+            "items": [
+              "다시마무채국",
+              "비엔나야채볶음",
+              "연두부&양념장",
+              "오복채무침",
+              "배추김치",
+              "오렌지/우유"
+            ],
+            "calories": "733 Kcal"
+          },
+          "bakery": {
+            "main": "못난이감자치즈빵",
+            "items": [
+              "양버터떡",
+              "오렌지",
+              "씨리얼 2종/우유",
+              "요거트"
+            ],
+            "calories": "716 Kcal"
+          },
+          "common": "그린샐러드 & 드레싱 & 셀프계란후라이"
+        },
+        "lunch_cupbap": null,
+        "dinner": {
+          "korean": {
+            "main": "오징어초무침",
+            "items": [
+              "쌀밥",
+              "사골우거지국",
+              "계란찜",
+              "오그락지무침",
+              "배추김치"
+            ],
+            "calories": "722 Kcal"
+          },
+          "info": null,
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-07",
+      "day_of_week": "금요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "닭가슴살굴소스볶음",
+            "items": [
+              "잡곡밥",
+              "콩나물국",
+              "감자채볶음",
+              "양념고추지",
+              "깍두기",
+              "황도/우유"
+            ],
+            "calories": "729 Kcal"
+          },
+          "bakery": {
+            "main": "못난이감자치즈빵",
+            "items": [
+              "치킨너겟",
+              "황도",
+              "씨리얼 2종/우유",
+              "요거트"
+            ],
+            "calories": "725 Kcal"
+          },
+          "common": "그린샐러드 & 드레싱 & 셀프계란후라이"
+        },
+        "lunch_cupbap": null,
+        "dinner": {
+          "korean": {
+            "main": "제육고추장볶음",
+            "items": [
+              "쌀밥",
+              "청국장찌개",
+              "데친두부",
+              "연근조림",
+              "깍두기"
+            ],
+            "calories": "724 Kcal"
+          },
+          "info": null,
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-08",
+      "day_of_week": "토요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "황태해장국",
+            "items": [
+              "쌀밥",
+              "후랑크야채볶음",
+              "만두튀김",
+              "콩조림",
+              "배추김치",
+              "바나나/우유"
+            ],
+            "calories": "727 Kcal"
+          },
+          "bakery": {
+            "main": "토스트빵&버터&딸기잼",
+            "items": [
+              "슬라이스햄&슬라이스치즈",
+              "바나나",
+              "씨리얼 2종/우유",
+              "요거트"
+            ],
+            "calories": "718 Kcal"
+          },
+          "common": "그린샐러드 & 드레싱 & 셀프계란후라이"
+        },
+        "lunch_cupbap": null,
+        "dinner": {
+          "korean": null,
+          "info": "토요일석식미운영",
+          "common_beverage": "디톡스워터"
+        }
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "day_of_week": "일요일",
+      "meals": {
+        "breakfast": {
+          "korean": {
+            "main": "레몬삼치구이",
+            "items": [
+              "잡곡밥",
+              "미역국",
+              "팝콘치킨",
+              "우엉조림",
+              "배추김치",
+              "람부탄/우유"
+            ],
+            "calories": "762 Kcal"
+          },
+          "bakery": {
+            "main": "단팥빵",
+            "items": [
+              "잡채말이튀김",
+              "람부탄",
+              "씨리얼 2종/우유",
+              "요거트"
+            ],
+            "calories": "734 Kcal"
+          },
+          "common": "그린샐러드 & 드레싱 & 셀프계란후라이"
+        },
+        "lunch_cupbap": null,
+        "dinner": {
+          "korean": {
+            "main": "훈제오리볶음밥",
+            "items": [
+              "근대국",
+              "쫄면무침",
+              "배추김치",
+              "그린샐러드",
+              "미니약과"
+            ],
+            "calories": "751 Kcal"
+          },
+          "info": null,
+          "common_beverage": "디톡스워터"
+        }
+      }
+    }
+  ]
+}
